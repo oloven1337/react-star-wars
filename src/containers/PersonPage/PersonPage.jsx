@@ -13,7 +13,6 @@ const PersonPage = ({match, setErrorApi}) => {
     const [personInfo, setPersonInfo] = React.useState([])
     const [personName, setPersonName] = React.useState('')
     const [personPhoto, setPersonPhoto] = React.useState('')
-    console.log(setErrorApi)
     React.useEffect(() => {
         (async () => {
             const id = match.params.id
@@ -24,6 +23,8 @@ const PersonPage = ({match, setErrorApi}) => {
                     {title: 'Height', data: res.height},
                     {title: 'Gender', data: res.gender},
                     {title: 'Mass', data: res.mass},
+                    {title: 'Eye color', data: res.eye_color},
+                    {title: 'Birth year', data: res.birth_year},
                 ])
 
                 setPersonName(res.name)
@@ -37,14 +38,15 @@ const PersonPage = ({match, setErrorApi}) => {
 
     return (
         <div className={styles.wrapper}>
-            <span className={styles.person}>{personName}</span>
+            <span className={styles.person__name}>{personName}</span>
 
-            <PersonPhoto
-                personPhoto={personPhoto}
-                personName={personName}
-            />
-
-            {personInfo && <PersonInfo personInfo={personInfo}/>}
+            <div className={styles.container}>
+                <PersonPhoto
+                    personPhoto={personPhoto}
+                    personName={personName}
+                />
+                {personInfo && <PersonInfo personInfo={personInfo}/>}
+            </div>
         </div>
     )
 }
