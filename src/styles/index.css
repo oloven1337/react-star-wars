@@ -35,11 +35,7 @@
     0 0 40px var(--color-blue);
 
     --theme-default-header: #cccc46;
-    --theme-default-bgimage: url('../static/bg.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top left;
-    background-attachment: fixed;
+    --theme-default-bgimage: url('../static/swbg.jpg');
 }
 
 img {
@@ -53,6 +49,10 @@ body {
     font-family: var(--font-family-main);
     font-size: var(--font-size-main);
     background-image: var(--theme-default-bgimage);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-attachment: fixed;
 }
 
 .header__text {
