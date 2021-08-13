@@ -7,6 +7,7 @@ import {withErrorApi} from "../../hoc-helpers/withErrorApi";
 import PropTypes from 'prop-types'
 import {useQueryParams} from "../../hooks/useQueryParams";
 import PeopleNavigation from "../../components/PeoplePage/PeopleNavigation";
+import Loader from '../../components/Loaders/Loader'
 
 const PeoplePage = ({setErrorApi}) => {
     const [people, setPeople] = React.useState(null)
@@ -54,7 +55,8 @@ const PeoplePage = ({setErrorApi}) => {
                 nextPage={nextPage}
                 counterPage={counterPage}
             />
-            {people && <PeopleList people={people}/>}
+            {/*{people && <PeopleList people={people}/>}*/}
+            {people ? <PeopleList people={people}/> : <Loader/>}
         </>
     )
 }

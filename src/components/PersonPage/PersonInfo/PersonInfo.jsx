@@ -4,6 +4,11 @@ import React from "react";
 import styles from './PersonInfo.module.css'
 
 const PersonInfo = ({personInfo}) => {
+
+    // if (!personInfo.length) {
+    //     return <Loader/>
+    // }
+
     return (
         <div className={styles.wrapper}>
             <ul className={styles.list__container}>
