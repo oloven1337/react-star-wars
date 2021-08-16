@@ -1,24 +1,32 @@
 import React from "react";
 import PropTypes from 'prop-types'
-import styles from './SearchPage.module.css'
-import {getApiResource} from "../../../utils/network";
-import {withErrorApi} from "../../../hoc-helpers/withErrorApi";
-import {API_SEARCH} from "../../../constans/api";
-import {getPeopleId, getPeopleImage} from "../../../services/getPeopleData";
-import PeopleList from "../../PeoplePage/PeopleList";
+import {Link} from "react-router-dom";
+import styles from './SearchPageInfo.module.css'
 
-const SearchPage = ({setErrorApi}) => {
+const SearchPageInfo = ({people}) => (
+    <>
+        {people.length
+            ? (
+                <ul className={styles.list__container}>
+                    {people.map(({id, name, img}) =>
+                        <li className={styles.list__item} key={id}>
+                            <Link to={`/people/${id}`}>
+                                <img className={styles.person__photo} src={img} alt="name"/>
+                                <p className={styles.person__name}>{name}</p>
+                            </Link>
+                        </li>
+                    )}
+                </ul>
+            )
+            : <h2 className={styles.person__comment}>No results</h2>
+
+        }
+    </>
+)
 
 
-    return (
-        <>
-           SearchPage
-        </>
-    )
+SearchPageInfo.propTypes = {
+    people: PropTypes.arrayOf(PropTypes.object)
 }
 
-SearchPage.propTypes = {
-    setErrorApi: PropTypes.func
-}
-
-export default withErrorApi(SearchPage)
+export default SearchPageInfo

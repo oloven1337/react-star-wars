@@ -34,8 +34,30 @@
     --text-shadow-blue: 0 0 2px var(--color-white),
     0 0 40px var(--color-blue);
 
-    --theme-default-header: #cccc46;
-    --theme-default-bgimage: url('../static/swbg.jpg');
+
+
+    --box-shadow-white:
+            0 16px 24px 2px rgba(255, 255, 255, 0.02),
+            0 6px 30px 5px rgba(255, 255, 255, 0.04),
+            0 8px 10px -5px rgba(255, 255, 255, 0.1);
+
+    --box-shadow-black:
+            0 16px 24px 2px rgba(0, 0, 0, 0.5),
+            0 6px 30px 5px rgba(0, 0, 0, 0.1),
+            0 8px 10px -5px rgba(0, 0, 0, 0.2);
+
+    /*  THEMES  */
+    --theme-default-header: var(--theme-light-header);
+    --theme-light-header: #cccc46;
+    --theme-dark-header: #ca6c6f;
+
+    --theme-default-bgimage: var(--theme-light-bgimage);
+    --theme-light-bgimage: url('../static/bg.jpg');
+    --theme-dark-bgimage: linear-gradient(180deg, hsla(0, 0%, 0%, 0.5) 0%, hsla(0, 69%, 36%, 1) 100%);
+
+    --theme-default-button: var(--theme-light-button);
+    --theme-light-button: #dfe2df;
+    --theme-dark-button: #ca6c6f;
 }
 
 img {

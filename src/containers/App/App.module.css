@@ -1,7 +1,7 @@
 .wrapper {
     max-width: var(--width-max);
     margin: auto;
-    padding: var(--spacing-large) 0;
+    padding: var(--spacing-large) 10px;
 }
 
 /*@media (max-width: 1400px) {*/
