@@ -48,7 +48,7 @@ const SearchPage = ({setErrorApi}) => {
         setInputSearchValue(value)
         debouncedGetResponse(value)
     }
-
+    console.log(people)
     return (
         <>
             <h1 className='header__text'>Search</h1>

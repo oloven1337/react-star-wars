@@ -1,7 +1,7 @@
 import React from "react";
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import {Link} from "react-router-dom";
-import styles from './SearchPageInfo.module.css'
+import styles from './SearchPageInfo.module.css';
 
 const SearchPageInfo = ({people}) => (
     <>
@@ -19,11 +19,9 @@ const SearchPageInfo = ({people}) => (
                 </ul>
             )
             : <h2 className={styles.person__comment}>No results</h2>
-
         }
     </>
 )
-
 
 SearchPageInfo.propTypes = {
     people: PropTypes.arrayOf(PropTypes.object)

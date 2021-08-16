@@ -11,10 +11,6 @@ const PersonPhoto = ({personId, personPhoto, personName, personFavorite, setPers
 
     const dispatch = useDispatch()
 
-    if (!personPhoto) {
-        return <Loader/>
-    }
-
     const dispatchFavoritePeople = () => {
         if (personFavorite) {
             dispatch(removePersonFromFavorite(personId))
@@ -28,6 +24,10 @@ const PersonPhoto = ({personId, personPhoto, personName, personFavorite, setPers
             }))
             setPersonFavorite(true)
         }
+    }
+
+    if (!personPhoto) {
+        return <Loader/>
     }
 
     return (
